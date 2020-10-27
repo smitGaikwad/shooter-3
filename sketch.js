@@ -6,7 +6,7 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var box1, pig1,pig3;
 var backgroundImg,platform;
-var bird, slingshot;
+var , slingshot;
 
 var gameState = "onSling";
 
@@ -26,22 +26,22 @@ function setup(){
     ground = new Ground(600,height,1200,20);
     platform = new Ground(150, 305, 300, 170);
 
-    box1 = new Pig(810,190,70,70);
-    box2 = new Pig(860,270,70,70);
-    box3 = new Pig(920,350,70,70);
-    pig1 = new Pig(810, 350,70,70);
-    log1 = new Pig(700,350,370, 70);
-    box4 = new Pig(760,270,70,70);
+    box1 = new (810,190,70,70);
+    box2 = new (860,270,70,70);
+    box3 = new (920,350,70,70);
+    pig1 = new (810, 350,70,70);
+    log1 = new (700,350,370, 70);
+    box4 = new (760,270,70,70);
    
 
-    bird = new Bird(200,50);
+     = new (200,50);
 
     //log6 = new Log(230,180,80, PI/2);
-    slingshot = new SlingShot(bird.body,{x:200, y:50});
+    slingshot = new SlingShot(.body,{x:200, y:50});
 }
 
 function draw(){
-    background("black");
+    background("white");
 
     noStroke();
     textFont("Impact")
@@ -60,7 +60,7 @@ function draw(){
     box4.display();
     
 
-    bird.display();
+    .display();
     platform.display();
     //log6.display();
     slingshot.display();    
@@ -69,19 +69,19 @@ function draw(){
 
 function mouseDragged(){
     if (gameState!=="launched"){
-        Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+        Matter.Body.setPosition(.body, {x: mouseX , y: mouseY});
     }
 }
 
 
 function mouseReleased(){
-    slingshot.fly();
+    slingshot.();
     gameState = "launched";
 }
 
 function keyPressed(){
     if(keyCode === 32){
-       // slingshot.attach(bird.body);
+       // slingshot.attach(.body);
     }
 }
 
